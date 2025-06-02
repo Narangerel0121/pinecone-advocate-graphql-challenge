@@ -2,11 +2,8 @@ import { buildSubgraphSchema } from "@apollo/subgraph";
 import { InMemoryLRUCache } from "@apollo/utils.keyvaluecache";
 import { resolvers } from "../../graphql/resolvers";
 import { ApolloServer } from "apollo-server-cloud-functions";
-import { connectMongoose } from "@/mongoose/mongoose-connection";
 import { GraphQLResolverMap } from "@apollo/subgraph/dist/schema-helper";
 import { typeDefs } from "@/graphql/schemas";
-
-connectMongoose();
 
 const server = new ApolloServer({
   schema: buildSubgraphSchema({
@@ -20,6 +17,7 @@ const server = new ApolloServer({
     headers: req.headers,
     req,
     res,
+    userId: 'test-user-id'
   }),
 });
 
