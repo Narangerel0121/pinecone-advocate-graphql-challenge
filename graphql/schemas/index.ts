@@ -2,26 +2,30 @@ import { gql } from "graphql-tag";
 
 export const typeDefs = gql`
   type Task {
-    _id: ID!
-    userId: String!
-    taskName: String!
-    description: String!
-    isDone: Boolean
-    priority: Int!
-    tags: [String]
-    createdAt: String
-    updatedAt: String
+    id: ID!
+    title: String!
+    description: String
+    isCompleted: Boolean!
+    isFinished: Boolean!
+    createdAt: String!
+    updatedAt: String!
   }
+
+  type Query {
+    helloQuery: String
+    getAllTasks: [Task!]!
+    getFinishedTasksLists: [Task!]!
+  }
+
   type Mutation {
     sayHello(name: String!): String
-    addTask(
-      taskName: String!
-      description: String!
-      priority: Int!
-      tags: [String!]
-    ): Task
-  }
-    type Query {
-      helloQuery: String
+    addTask(title: String!, description: String): Task!
+    updateTask(
+      id: ID!
+      title: String
+      description: String
+      isCompleted: Boolean
+      isFinished: Boolean
+    ): Task!
   }
 `;
