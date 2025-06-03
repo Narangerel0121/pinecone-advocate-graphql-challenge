@@ -1,4 +1,4 @@
-jest.mock("@/mongoose/schema/Task", () => {
+jest.mock("@/mongoose/models/task", () => {
     const mockSave = jest.fn();
   
     const MockTask = jest.fn().mockImplementation(function (this: any, data) {
@@ -19,7 +19,7 @@ jest.mock("@/mongoose/schema/Task", () => {
     let mockSave: jest.Mock;
   
     beforeEach(() => {
-      const mockedModule = jest.requireMock("@/mongoose/schema/Task");
+      const mockedModule = jest.requireMock("@/mongoose/models/task");
       mockSave = mockedModule.__mockSave;
       mockSave.mockReset();
     });
@@ -56,3 +56,4 @@ jest.mock("@/mongoose/schema/Task", () => {
       expect(mockSave).toHaveBeenCalledTimes(1);
     });
   });
+  

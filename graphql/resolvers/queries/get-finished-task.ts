@@ -1,5 +1,4 @@
-import Task from "@/mongoose/schema/Task";
-
+import Task from "@/mongoose/models/task";
 export const getFinishedTasks = async () => {
   try {
     const finishedTasks = await Task.find({ isFinished: true });

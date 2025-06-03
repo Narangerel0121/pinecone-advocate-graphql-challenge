@@ -9,6 +9,9 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const config = {
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+  },
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'node',
   rootDir: './',

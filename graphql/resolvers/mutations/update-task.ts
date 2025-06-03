@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Task from "@/mongoose/schema/Task";
+import Task from "@/mongoose/models/task";
 
 type UpdateTask = {
   id: string;

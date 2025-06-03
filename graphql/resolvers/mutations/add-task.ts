@@ -1,5 +1,4 @@
-import Task from "@/mongoose/schema/Task";
-
+import Task from "@/mongoose/models/task";
 const addTask = async (
   _: unknown,
   { title, description }: { title: string; description?: string }

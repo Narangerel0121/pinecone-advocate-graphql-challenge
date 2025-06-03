@@ -1,7 +1,7 @@
 import { getAllTasks } from "@/graphql/resolvers/queries/get-all-task";
-import Task from "@/mongoose/schema/Task";
+import Task from "@/mongoose/models/task";
 
-jest.mock("@/mongoose/schema/Task", () => ({
+jest.mock("@/mongoose/models/Task", () => ({
   __esModule: true,
   default: {
     find: jest.fn(),

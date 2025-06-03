@@ -1,5 +1,4 @@
-import Task from "@/mongoose/schema/Task";
-
+import Task from "@/mongoose/models/task";
 export const getAllTasks = async () => {
   try {
     const tasks = await Task.find();

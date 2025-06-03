@@ -9,7 +9,7 @@ jest.mock("mongoose", () => ({
   },
 }));
 
-jest.mock("@/mongoose/schema/Task", () => ({
+jest.mock("@/mongoose/models/task", () => ({
   __esModule: true,
   default: {
     findById: mockFindById,

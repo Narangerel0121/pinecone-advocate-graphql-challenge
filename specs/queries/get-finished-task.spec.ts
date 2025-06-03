@@ -1,7 +1,7 @@
 import { getFinishedTasks } from "@/graphql/resolvers/queries/get-finished-task";
-import Task from "@/mongoose/schema/Task";
+import Task from "@/mongoose/models/task";
 
-jest.mock("@/mongoose/schema/Task", () => ({
+jest.mock("@/mongoose/models/Task", () => ({
   __esModule: true,
   default: {
     find: jest.fn(),
@@ -50,7 +50,7 @@ describe("getFinishedTasksLists Query", () => {
     (Task.find as jest.Mock).mockRejectedValue(new Error("Database error"));
 
     await expect(getFinishedTasks()).rejects.toThrow(
-      "Failed to fetch finished tasks: Database error"
+      "Failed to fetch finsihed tasks: Database error"
     );
   });
 });
