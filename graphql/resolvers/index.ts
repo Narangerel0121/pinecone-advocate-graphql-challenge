@@ -1,5 +1,5 @@
 
-import { addTask } from "./mutations/add-task";
+import addTask from "./mutations/add-task";
 import { sayHello } from "./mutations/say-hello";
 import { helloQuery } from "./queries/hello-query";
 
